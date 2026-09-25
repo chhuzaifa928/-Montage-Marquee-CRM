@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --montage-gold: #d97706;
+    --montage-gold-dark: #b45309;
+    --montage-gold-light: #f59e0b;
+    --montage-gold-subtle: #fef3c7;
+    --montage-emerald: #059669;
+    --montage-emerald-light: #10b981;
+    --montage-emerald-subtle: #d1fae5;
+    --montage-slate-900: #0f172a;
+    --montage-slate-800: #1e293b;
+    --montage-slate-700: #334155;
+    --montage-slate-100: #f1f5f9;
+    --montage-slate-50: #f8fafc;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom scrollbars for sleek executive UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Styles for Montage Booking Voucher & Tax Invoice */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .no-print, nav, aside, button, header, .toast-container {
+    display: none !important;
+  }
+
+  .printable-voucher {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 1.2cm;
+  }
+}
